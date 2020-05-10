@@ -12,26 +12,17 @@
 #include <stdlib.h>
 #include "UTN.h"
 
+#define TAM 5
+
 int main(void) {
-	float flotante;
-	int respuesta;
+	int v[5];
 
-	respuesta = utn_getFloat(&flotante,"Ingrese flotante: ","Error el numero debe ser desde 0.5 hasta 99.99\n", 0.5, 99.99, 3);
-
-	if(respuesta == 0){
-		printf("El flotante es: %.2f\n", flotante);
-	}else{
-		printf("Error\n");
-	}
+	utn_getArrayInt(v, 5);
+	utn_imprimirArrayInt(v, 5);
 
 	system("pause");
 	return EXIT_SUCCESS;
 }
-
-
-
-
-
 
 
 

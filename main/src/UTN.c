@@ -76,6 +76,19 @@ int  utn_getFloat(float* pResultado, char* mensaje, char* mensajeError, float mi
 	}
 	return retorno;
 }
+void utn_getArrayInt(int array[], int size){
+	for (int i = 0; i < size; i++){
+		printf("Ingrese valor a cargar en el vector: ");
+		scanf("%d",&array[i]);
+	}
+}
+void utn_imprimirArrayInt(int array[], int size){
+	for(int i = 0; i < size; i++){
+		printf("%d ", array[i]);
+	}
+	printf("\n");
+}
+
 
 
 
