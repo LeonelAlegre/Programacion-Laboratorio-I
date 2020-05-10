@@ -1,0 +1,267 @@
+23:53:23 **** Rebuild of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:18:6: warning: unused variable 'numero2' [-Wunused-variable]
+   18 |  int numero2 = 3;
+      |      ^~~~~~~
+..\src\main.c:17:6: warning: unused variable 'numero1' [-Wunused-variable]
+   17 |  int numero1 = 5;
+      |      ^~~~~~~
+gcc -o main.exe "src\\main.o" 
+23:54:04 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\main.o" 
+23:56:38 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:18:50: warning: implicit declaration of function 'sumar' [-Wimplicit-function-declaration]
+   18 |  printf("el resultado de %d + %d es: %d" , a, b, sumar(a, b));
+      |                                                  ^~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+23:57:46 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\main.o: in function `sumar':
+C:\Users\Leonel\Work-Space\main\Debug/../src/UTN.c:10: multiple definition of `sumar'; src\UTN.o:C:\Users\Leonel\Work-Space\main\Debug/../src/UTN.c:10: first defined here
+collect2.exe: error: ld returned 1 exit status
+23:58:08 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+Info: Nothing to build for main
+01:03:07 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+01:06:24 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:07:34 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:09:41 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:11:36 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:14:54 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:16:19 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+..\src\UTN.c: In function 'utn_getNumero':
+..\src\UTN.c:17:11: warning: passing argument 1 of 'fflush' from incompatible pointer type [-Wincompatible-pointer-types]
+   17 |    fflush("stdin");
+      |           ^~~~~~~
+      |           |
+      |           char *
+In file included from ..\src\UTN.c:7:
+c:\mingw\include\stdio.h:262:49: note: expected 'FILE *' {aka 'struct _iobuf *'} but argument is of type 'char *'
+  262 | _CRTIMP __cdecl __MINGW_NOTHROW  int    fflush (FILE *);
+      |                                                 ^~~~~~
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:16:42 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:17:02 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:17:16 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:18:01 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:18:38 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:18:56 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:21:12 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:21:34 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:22:13 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:22:36 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:25:48 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:38:48 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:19:14: warning: implicit declaration of function 'utn_getChar'; did you mean 'utn_getCaracter'? [-Wimplicit-function-declaration]
+   19 |  respuesta = utn_getChar(&letra,"Ingrese letra: ","Error la letra debe ser desde A hasta J\n", 'A', 'J', 1);
+      |              ^~~~~~~~~~~
+      |              utn_getCaracter
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\main.o: in function `main':
+C:\Users\Leonel\Work-Space\main\Debug/../src/main.c:19: undefined reference to `utn_getChar'
+collect2.exe: error: ld returned 1 exit status
+01:39:15 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:19:14: warning: implicit declaration of function 'utn_getChar'; did you mean 'utn_getCaracter'? [-Wimplicit-function-declaration]
+   19 |  respuesta = utn_getChar(&letra,"Ingrese letra: ","Error la letra debe ser desde A hasta J\n", 'A', 'J', 1);
+      |              ^~~~~~~~~~~
+      |              utn_getCaracter
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\main.o: in function `main':
+C:\Users\Leonel\Work-Space\main\Debug/../src/main.c:19: undefined reference to `utn_getChar'
+collect2.exe: error: ld returned 1 exit status
+01:39:32 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:19:14: warning: implicit declaration of function 'utn_getChar'; did you mean 'utn_getCaracter'? [-Wimplicit-function-declaration]
+   19 |  respuesta = utn_getChar(&letra,"Ingrese letra: ","Error la letra debe ser desde A hasta J\n", 'A', 'J', 1);
+      |              ^~~~~~~~~~~
+      |              utn_getCaracter
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\main.o: in function `main':
+C:\Users\Leonel\Work-Space\main\Debug/../src/main.c:19: undefined reference to `utn_getChar'
+collect2.exe: error: ld returned 1 exit status
+01:40:17 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: reopening main.exe: Permission denied
+
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: final link failed: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:40:30 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:42:42 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+Info: Nothing to build for main
+01:48:37 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:48:57 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+01:58:36 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\UTN.o" "..\\src\\UTN.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:19:26: warning: passing argument 1 of 'utn_getChar' from incompatible pointer type [-Wincompatible-pointer-types]
+   19 |  respuesta = utn_getChar(&flotante,"Ingrese flotante: ","Error el numero debe ser desde 0.5 hasta 99.99\n", 0.5, 99.99, 3);
+      |                          ^~~~~~~~~
+      |                          |
+      |                          float *
+In file included from ..\src\main.c:13:
+..\src\UTN.h:13:24: note: expected 'char *' but argument is of type 'float *'
+   13 | int  utn_getChar(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos);
+      |                  ~~~~~~^~~~~~~~~~
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+Info: Nothing to build for main
+02:01:21 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:19:26: warning: passing argument 1 of 'utn_getChar' from incompatible pointer type [-Wincompatible-pointer-types]
+   19 |  respuesta = utn_getChar(&flotante,"Ingrese flotante: ","Error el numero debe ser desde 0.5 hasta 99.99\n", 0.5, 99.99, 3);
+      |                          ^~~~~~~~~
+      |                          |
+      |                          float *
+In file included from ..\src\main.c:13:
+..\src\UTN.h:13:24: note: expected 'char *' but argument is of type 'float *'
+   13 | int  utn_getChar(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos);
+      |                  ~~~~~~^~~~~~~~~~
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:02:59 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:03:41 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:06:33 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:07:06 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:07:33 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:07:47 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:08:40 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:09:24 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:27:36: error: expected ';' before 'system'
+   27 |  printf("flotante: %2.f", flotante)
+      |                                    ^
+      |                                    ;
+   28 | 
+   29 |  system("pause");
+      |  ~~~~~~                             
+02:09:33 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:09:54 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 
+02:10:14 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\UTN.o" "src\\main.o" 

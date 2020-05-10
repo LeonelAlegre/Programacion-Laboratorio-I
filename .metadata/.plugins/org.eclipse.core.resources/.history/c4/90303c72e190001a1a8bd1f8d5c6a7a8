@@ -1,0 +1,37 @@
+/*
+ ============================================================================
+ Name        : main.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "UTN.h"
+
+int main(void) {
+	int edad;
+	int respuesta;
+	respuesta = utn_getNumero(&edad,"Ingrese edad: ","Error la edad debe ser desde 0 a 199\n",0, 199, 2);
+
+	if(respuesta == 0){
+		printf("La edad es: %d", edad);
+	}else{
+		printf("\nError");
+	}
+
+	system("pause");
+	return EXIT_SUCCESS;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+/*
+ * UTN.h
+ *
+ *  Created on: 7 may. 2020
+ *      Author: Leonel
+ */
+
+#ifndef UTN_H_
+#define UTN_H_
+
+int  utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+int  utn_getNumeroFlotante(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+int  utn_getCaracter(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+
+#endif /* UTN_H_ */

@@ -1,0 +1,39 @@
+/*
+ ============================================================================
+ Name        : main.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "UTN.h"
+
+int main(void) {
+	char letra;
+	char respuesta;
+
+	respuesta = utn_getChar(&letra,"Ingrese letra: ","Error la letra debe ser desde A hasta J\n", 'A', 'J', 1);
+
+	if(respuesta == 0){
+		printf("La letra es: %c\n", letra);
+	}else{
+		printf("Error\n");
+	}
+
+
+	system("pause");
+	return EXIT_SUCCESS;
+}
+
+
+
+
+
+
+
+
+
