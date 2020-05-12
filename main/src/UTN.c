@@ -11,8 +11,10 @@
 
 static int getInt(int* pResultado);
 static int getChar(char* pResultado);
+static int getFloat(float* pResultado);
 static int esNumerica(char* cadena);
 static int esLetra(char* cadena);
+static int esFlotante(char* cadena);
 
 
 /**
@@ -175,21 +177,59 @@ int  utn_getFloat(float* pResultado, char* mensaje, char* mensajeError, float mi
 	float bufferFloat;
 
 	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
-		do{
+		while(reintentos >= 0){
+			reintentos --;
 			printf("%s", mensaje);
-			fflush(stdin);
-			scanf("%f", &bufferFloat);
-			if(bufferFloat >= minimo && bufferFloat <= maximo){
-				*pResultado = bufferFloat;
-				retorno = 0;
-				break;
-			}
-			else{
-				printf("%s", mensajeError);
-				reintentos --;
-			}
-		}while(reintentos >= 0);
 
+			if(getFloat(&bufferFloat) == 0){
+				if(bufferFloat >= minimo && bufferFloat <= maximo){
+					*pResultado = bufferFloat;
+					retorno = 0;
+					break;
+				}
+			}
+			printf("%s", mensajeError);
+		}
+
+	}
+	return retorno;
+}
+static int esFlotante(char* cadena){
+	int retorno = 1;	//1 (VERDADERO)
+	int contadorPunto = 0;
+
+	if(cadena != NULL && strlen(cadena) > 0){			//valida el paramatreo cadena
+		for(int i = 0; cadena[i] != '\0' ; i++){				//si posicion de la cadena no es vacio i++
+			if(i == 0 && cadena[i] == '-'){						//verifica si es negativo
+				continue;									//se empezara a verificar despues del signo '-'
+			}
+			if(cadena[i] < '0' || cadena[i] > '9' ){	//verifica que se haya ingresado un numero
+				if(cadena[i] == '.' && contadorPunto == 0){
+					contadorPunto++;
+				}
+				else{
+					retorno = 0;	//0 (FALSO)
+					break;
+				}
+			}
+		}
+	}
+	return retorno;
+}
+/**
+ * \brief Obtiene un entero ingresado por pantalla
+ * \param pResultado Puntero al espacio de memoria donde se guardara el entero ingresado
+ * \return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
+*
+*/
+static int getFloat(float* pResultado){
+	int retorno=-1;		// -1 (ERROR)
+	char buffer[64];	//guarda el valor ingresado temporalmente
+	if(pResultado != NULL){		//validacion del parametro
+		if(myGets(buffer,sizeof(buffer))==0 && esFlotante(buffer)){ //si myGets() && esFlotante() son true
+			*pResultado = atof(buffer);		//se pasa el buffer a entero y se guarda en el puntero
+			retorno = 0;	//0 (EXITO)
+		}
 	}
 	return retorno;
 }

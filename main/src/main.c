@@ -16,30 +16,19 @@
 #define TAM 9
 
 int main(void) {
-	int i = 0;
-	char cadena[64];
-	while(i < 5){
-		system("cls");
-		printf("iteracion: %d ********\n", i);
+	int respuesta;
+	float resultado;
 
-		utn_getChar(cadena, "Ingresar lentra: ", "error. dato no valido\n", 'A', 'z', 2);
 
-		printf("cadena ingresada: %s\n", cadena);
-
-		system("pause");
-
-		i++;
+	while(1){
+		respuesta = utn_getFloat(&resultado, "ingresar flotante: ","error\n", -5, 10, 2);
+		printf("Resultado: %.2f -- Respuesta %d\n",resultado, respuesta);
 	}
-	system("pause");
-
-/*
-	utn_getArrayInt(arrayInt, TAM, "ingresar entero: ","error.", 0, 99, 1);
-	utn_printArrayInt(arrayInt, TAM);
-*/
 
 	system("pause");
 	return EXIT_SUCCESS;
 }
+
 
 
 
