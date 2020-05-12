@@ -9,20 +9,19 @@
 #include <string.h>
 #include "UTN.h"
 
-static int esNumerica(char* cadena);
 static int getInt(int* pResultado);
 static int getChar(char* pResultado);
-
+static int esNumerica(char* cadena);
 static int esLetra(char* cadena);
 
 
 /**
- * \brief Solicita un numero al usuario, leuego de verificarlo devuelve el resultado
+ * \brief Solicita un numero al usuario, luego de verificarlo devuelve el resultado
  * \param pResultado Puntero al espacio de memoria donde se guardara el numero
  * \param mensaje Es el mensaje a ser mostrado
  * \param mensajeError Es el mensaje de Error a ser mostrado
- * \param minimo Es el numero maximo a ser aceptado
- * \param maximo Es el minimo minimo a ser aceptado
+ * \param minimo Es el numero minimo a ser aceptado
+ * \param maximo Es el numero maximo a ser aceptado
  * \return Retorna 0 si se obtuvo el numero y -1 en caso de error
  */
 int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
@@ -104,56 +103,65 @@ static int esNumerica(char* cadena){
 	}
 	return retorno;
 }
+/**
+ * \brief Solicita un caracter al usuario, luego de verificarlo devuelve el resultado
+ * \param pResultado Puntero al espacio de memoria donde se guardara el caracter
+ * \param mensaje Es el mensaje a ser mostrado
+ * \param mensajeError Es el mensaje de Error a ser mostrado
+ * \param minimo Es el caracter minimo a ser aceptado
+ * \param maximo Es el caracter maximo a ser aceptado
+ * \return Retorna 0 si se obtuvo el caracter y -1 en caso de error
+ */
 int  utn_getChar(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos){
-	int retorno = -1;
-	char bufferChar;
+	int retorno = -1;		//se carga el valor -1 en el caso de error
+	char bufferChar;		//guarda el valor ingreso por el usuario
 
-	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
-		while(reintentos >= 0){
+	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){ // validacion de parametros
+		while(reintentos >= 0){		//si reintentos = 0 al final del primer bucle reintentos sera  = -1
 			reintentos --;
-			printf("%s", mensaje);
+			printf("%s", mensaje);	//imprime char* mensaje
 
-			if(getChar(&bufferChar) == 0){
-				if(bufferChar >= minimo && bufferChar <= maximo){
-					*pResultado = bufferChar;
-					retorno = 0;
-					break;
+			if(getChar(&bufferChar) == 0){	//llama a getChar() y guarda el valor en el buffer
+				if(bufferChar >= minimo && bufferChar <= maximo){	//se comprueba que buffer este en el rango
+					*pResultado = bufferChar;		//puntero pResultado guarda el valor del buffer
+					retorno = 0;					//se ingreso un numero
+					break;							//fin bucle
 				}
 			}
-			printf("%s", mensajeError);
+			printf("%s", mensajeError);	//si getChar() da falso muestra char* mensajeError
 		}
 
 	}
 	return retorno;
 }
 /**
- * \brief Obtiene un entero ingresado por pantalla
- * \param pResultado Puntero al espacio de memoria donde se guardara el entero ingresado
- * \return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
+ * \brief Obtiene un caracter ingresado por pantalla
+ * \param pResultado Puntero al espacio de memoria donde se guardara el caracter ingresado
+ * \return Retorna 0 (EXITO) si se obtiene un numero caracter y -1 (ERROR) si no
 *
 */
 static int getChar(char* pResultado){
 	int retorno=-1;		// -1 (ERROR)
 	char buffer[64];	//guarda el valor ingresado temporalmente
 	if(pResultado != NULL){		//validacion del parametro
-		if(myGets(buffer,sizeof(buffer))==0 && esLetra(buffer)){ //si myGets() && esNumerica() son true
-			strcpy(pResultado, buffer);
+		if(myGets(buffer,sizeof(buffer))==0 && esLetra(buffer)){ //si myGets() && esLetra() son true
+			strcpy(pResultado, buffer);		//copia en el puntero pResultado el valor almacenado en buffer
 			retorno = 0;	//0 (EXITO)
 		}
 	}
 	return retorno;
 }
 /**
-* \brief Verifica si la cadena ingresada es numerica
+* \brief Verifica si la cadena ingresada es alfabetica
 * \param cadena Cadena de caracteres a ser analizada
-* \return Retorna 1 (VERDADERO) si la cadena es numerica y 0 (FALSO) si no lo es
+* \return Retorna 1 (VERDADERO) si la cadena es alfabetica y 0 (FALSO) si no lo es
 */
 static int esLetra(char* cadena){
 	int retorno = 1;	//1 (VERDADERO)
 
 	if(cadena != NULL && strlen(cadena) > 0){			//valida el paramatreo cadena
 		for(int i = 0 ; cadena[i] != '\0' ; i++){				//si posicion de la cadena no es vacio i++
-			if((cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < 'a' || cadena[i] > 'z') ){	//verifica que se haya ingresado un numero
+			if((cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < 'a' || cadena[i] > 'z') ){	//verifica si el caracter esta fuera de los rangos
 				retorno = 0;	//0 (FALSO)
 				break;
 			}
