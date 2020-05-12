@@ -17,4 +17,6 @@ int utn_printArrayInt(int* pArray, int size);
 int utn_ordenarArrayIntDesc(int* pArray, int size);
 int utn_ordenarArrayIntAsc(int* pArray, int size);
 
+int myGets(char* cadena, int longitud);
+
 #endif /* UTN_H_ */

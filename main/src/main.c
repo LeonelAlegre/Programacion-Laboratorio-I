@@ -16,23 +16,18 @@
 #define TAM 9
 
 int main(void) {
-	int resultado;
+	char resultado[64];
 
-	for(int i = 0; i < 5; i++){
-		system("cls");
-		printf("iteracion: %d ***************\n", i);
-		utn_getNumero(&resultado, "ingresar entero: ", "error\n", -10, 99, 2);
-		printf("numero: %d\n", resultado);
-		system("pause");
+	myGets(resultado, sizeof(resultado));
 
-	}
-
+	printf("resultado: %s\n", resultado);
 
 /*
 	utn_getArrayInt(arrayInt, TAM, "ingresar entero: ","error.", 0, 99, 1);
 	utn_printArrayInt(arrayInt, TAM);
 */
 
+	system("pause");
 	return EXIT_SUCCESS;
 }
 

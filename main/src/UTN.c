@@ -11,7 +11,6 @@
 
 static int esNumerica(char* cadena);
 static int getInt(int* pResultado);
-static int myGets(char* cadena, int longitud);
 
 /**
  * \brief Solicita un numero al usuario, leuego de verificarlo devuelve el resultado
@@ -69,7 +68,7 @@ static int getInt(int* pResultado){
  * \return Retorna 0 (EXITO) si se obtiene una cadena y -1 (ERROR) si no
 *
 */
-static int myGets(char* cadena, int longitud){
+int myGets(char* cadena, int longitud){
 	if(cadena != NULL && longitud >0 && fgets(cadena,longitud,stdin)==cadena){ //validacion de parametros y fgets()
 		fflush(stdin); // LINUX-> __fpurge o WIN-> fflush o MAC-> fpurge
 		if(cadena[strlen(cadena)-1] == '\n'){	//se comprueba que exista ENTER en la ultima posicion
