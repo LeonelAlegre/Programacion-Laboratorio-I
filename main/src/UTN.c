@@ -172,42 +172,56 @@ static int esLetra(char* cadena){
 	}
 	return retorno;
 }
+/**
+ * \brief Solicita un numero flotante al usuario, luego de verificarlo devuelve el resultado
+ * \param pResultado Puntero al espacio de memoria donde se guardara el numero
+ * \param mensaje Es el mensaje a ser mostrado
+ * \param mensajeError Es el mensaje de Error a ser mostrado
+ * \param minimo Es el numero minimo a ser aceptado
+ * \param maximo Es el numero maximo a ser aceptado
+ * \return Retorna 0 si se obtuvo el numero y -1 en caso de error
+ */
 int  utn_getFloat(float* pResultado, char* mensaje, char* mensajeError, float minimo, float maximo, int reintentos){
-	int retorno = -1;
+	int retorno = -1;	// -1 (ERROR)
 	float bufferFloat;
 
-	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
-		while(reintentos >= 0){
+	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){	// validacion de parametros
+		while(reintentos >= 0){		//si reintentos = 0 al final del primer bucle reintentos sera  = -1
 			reintentos --;
-			printf("%s", mensaje);
+			printf("%s", mensaje);	//imprime char* mensaje
 
-			if(getFloat(&bufferFloat) == 0){
-				if(bufferFloat >= minimo && bufferFloat <= maximo){
-					*pResultado = bufferFloat;
-					retorno = 0;
+			if(getFloat(&bufferFloat) == 0){	//llama a getFloat() y guarda el valor en el buffer
+				if(bufferFloat >= minimo && bufferFloat <= maximo){	//se comprueba que buffer este en el rango
+					*pResultado = bufferFloat;						//puntero pResultado guarda el valor del buffer
+					retorno = 0;	//0 (EXITO)
 					break;
 				}
 			}
-			printf("%s", mensajeError);
+			printf("%s", mensajeError);		//si getFloat() da falso muestra char* mensajeError
 		}
 
 	}
 	return retorno;
 }
+/**
+* \brief Verifica si la cadena ingresada es un flotante
+* \param cadena Cadena de caracteres a ser analizada
+* \return Retorna 1 (VERDADERO) si la cadena es flotante y 0 (FALSO) si no lo es
+*/
 static int esFlotante(char* cadena){
 	int retorno = 1;	//1 (VERDADERO)
 	int contadorPunto = 0;
 
 	if(cadena != NULL && strlen(cadena) > 0){			//valida el paramatreo cadena
-		for(int i = 0; cadena[i] != '\0' ; i++){				//si posicion de la cadena no es vacio i++
+		for(int i = 0; cadena[i] != '\0' ; i++){				//mientras posicion de la cadena no es vacio i++
 			if(i == 0 && cadena[i] == '-'){						//verifica si es negativo
 				continue;									//se empezara a verificar despues del signo '-'
 			}
 			if(cadena[i] < '0' || cadena[i] > '9' ){	//verifica que se haya ingresado un numero
-				if(cadena[i] == '.' && contadorPunto == 0){
+				if(cadena[i] == '.' && contadorPunto == 0){	//si se encuentra un '.' por primera vez
 					contadorPunto++;
 				}
-				else{
+				else{		//si contadorPunto > 0
 					retorno = 0;	//0 (FALSO)
 					break;
 				}
@@ -217,18 +231,18 @@ static int esFlotante(char* cadena){
 	return retorno;
 }
 /**
- * \brief Obtiene un entero ingresado por pantalla
- * \param pResultado Puntero al espacio de memoria donde se guardara el entero ingresado
- * \return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
+ * \brief Obtiene un flotante ingresado por pantalla
+ * \param pResultado Puntero al espacio de memoria donde se guardara el flotante ingresado
+ * \return Retorna 0 (EXITO) si se obtiene un numero flotante y -1 (ERROR) si no
 *
 */
 static int getFloat(float* pResultado){
-	int retorno=-1;		// -1 (ERROR)
-	char buffer[64];	//guarda el valor ingresado temporalmente
+	int retorno=-1;				// -1 (ERROR)
+	char buffer[64];			//guarda el valor ingresado temporalmente
 	if(pResultado != NULL){		//validacion del parametro
 		if(myGets(buffer,sizeof(buffer))==0 && esFlotante(buffer)){ //si myGets() && esFlotante() son true
-			*pResultado = atof(buffer);		//se pasa el buffer a entero y se guarda en el puntero
-			retorno = 0;	//0 (EXITO)
+			*pResultado = atof(buffer);		//se pasa el buffer a flotante y se guarda en el puntero
+			retorno = 0;					//0 (EXITO)
 		}
 	}
 	return retorno;
