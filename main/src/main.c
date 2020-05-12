@@ -10,19 +10,32 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "UTN.h"
 
-#define TAM 5
+#define TAM 9
 
 int main(void) {
-	int v[5];
+	int resultado;
 
-	utn_getArrayInt(v, 5);
-	utn_imprimirArrayInt(v, 5);
+	for(int i = 0; i < 5; i++){
+		system("cls");
+		printf("iteracion: %d ***************\n", i);
+		utn_getNumero(&resultado, "ingresar entero: ", "error\n", -10, 99, 2);
+		printf("numero: %d\n", resultado);
+		system("pause");
 
-	system("pause");
+	}
+
+
+/*
+	utn_getArrayInt(arrayInt, TAM, "ingresar entero: ","error.", 0, 99, 1);
+	utn_printArrayInt(arrayInt, TAM);
+*/
+
 	return EXIT_SUCCESS;
 }
+
 
 
 
