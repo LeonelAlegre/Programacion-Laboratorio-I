@@ -16,11 +16,21 @@
 #define TAM 9
 
 int main(void) {
-	char resultado[64];
+	int i = 0;
+	char cadena[64];
+	while(i < 5){
+		system("cls");
+		printf("iteracion: %d ********\n", i);
 
-	myGets(resultado, sizeof(resultado));
+		utn_getChar(cadena, "Ingresar lentra: ", "error. dato no valido\n", 'A', 'z', 2);
 
-	printf("resultado: %s\n", resultado);
+		printf("cadena ingresada: %s\n", cadena);
+
+		system("pause");
+
+		i++;
+	}
+	system("pause");
 
 /*
 	utn_getArrayInt(arrayInt, TAM, "ingresar entero: ","error.", 0, 99, 1);

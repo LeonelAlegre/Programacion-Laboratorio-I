@@ -11,6 +11,10 @@
 
 static int esNumerica(char* cadena);
 static int getInt(int* pResultado);
+static int getChar(char* pResultado);
+
+static int esLetra(char* cadena);
+
 
 /**
  * \brief Solicita un numero al usuario, leuego de verificarlo devuelve el resultado
@@ -105,21 +109,56 @@ int  utn_getChar(char* pResultado, char* mensaje, char* mensajeError, char minim
 	char bufferChar;
 
 	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
-		do{
+		while(reintentos >= 0){
+			reintentos --;
 			printf("%s", mensaje);
-			fflush(stdin);
-			scanf("%c", &bufferChar);
-			if(bufferChar >= minimo && bufferChar <= maximo){
-				*pResultado = bufferChar;
-				retorno = 0;
+
+			if(getChar(&bufferChar) == 0){
+				if(bufferChar >= minimo && bufferChar <= maximo){
+					*pResultado = bufferChar;
+					retorno = 0;
+					break;
+				}
+			}
+			printf("%s", mensajeError);
+		}
+
+	}
+	return retorno;
+}
+/**
+ * \brief Obtiene un entero ingresado por pantalla
+ * \param pResultado Puntero al espacio de memoria donde se guardara el entero ingresado
+ * \return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
+*
+*/
+static int getChar(char* pResultado){
+	int retorno=-1;		// -1 (ERROR)
+	char buffer[64];	//guarda el valor ingresado temporalmente
+	if(pResultado != NULL){		//validacion del parametro
+		if(myGets(buffer,sizeof(buffer))==0 && esLetra(buffer)){ //si myGets() && esNumerica() son true
+			strcpy(pResultado, buffer);
+			retorno = 0;	//0 (EXITO)
+		}
+	}
+	return retorno;
+}
+/**
+* \brief Verifica si la cadena ingresada es numerica
+* \param cadena Cadena de caracteres a ser analizada
+* \return Retorna 1 (VERDADERO) si la cadena es numerica y 0 (FALSO) si no lo es
+*/
+static int esLetra(char* cadena){
+	int retorno = 1;	//1 (VERDADERO)
+
+	if(cadena != NULL && strlen(cadena) > 0){			//valida el paramatreo cadena
+		for(int i = 0 ; cadena[i] != '\0' ; i++){				//si posicion de la cadena no es vacio i++
+			if((cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < 'a' || cadena[i] > 'z') ){	//verifica que se haya ingresado un numero
+				retorno = 0;	//0 (FALSO)
 				break;
 			}
-			else{
-				printf("%s", mensajeError);
-				reintentos --;
-			}
-		}while(reintentos >= 0);
-
+			i++;
+		}
 	}
 	return retorno;
 }
