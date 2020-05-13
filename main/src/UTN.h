@@ -14,6 +14,8 @@ int  utn_getChar(char* pResultado, char* mensaje, char* mensajeError, char minim
 
 int utn_getArrayInt(int* pArray, int size, char* mensaje, char* error, int min, int max, int reintentos);
 int utn_printArrayInt(int* pArray, int size);
+int printArrayFlotante(float* pArray, int size);
+int initArrayFlotante(float* pArray, int size, float valorInicial);
 int utn_ordenarArrayIntDesc(int* pArray, int size);
 int utn_ordenarArrayIntAsc(int* pArray, int size);
 

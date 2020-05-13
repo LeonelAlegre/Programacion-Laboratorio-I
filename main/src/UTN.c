@@ -292,6 +292,43 @@ int utn_printArrayInt(int* pArray, int size){
  * \param size ES la longitud del array
  * \return Cantidad de iteraciones necesarias para ordenar o -1 en caso de error
 */
+/**
+* \brief Inicializa un array de flotantes
+* \param pArray Puntero al array
+* \param size Define el tamaño del array
+* \param valorInicial Es el valor a ser cargado en todas las posiciones del array
+* \return Retorna 0 (EXITO) y -1 (FALSO) si no lo es
+*/
+int initArrayFlotante(float* pArray, int size, float valorInicial){
+	int respuesta = -1;
+
+	if(pArray != NULL && size > 0){
+		respuesta = 0;
+		for(int i = 0; i < size; i++){
+			pArray[i] = valorInicial;
+		}
+	}
+
+	return respuesta;
+}
+/**
+* \brief Imprime un array de flotantes
+* \param pArray Puntero al array
+* \param size Define el tamaño del array
+* \return Retorna 0 (EXITO) y -1 (FALSO) si no lo es
+*/
+int printArrayFlotante(float* pArray, int size){
+	int respuesta = -1;
+
+	if(pArray != NULL && size > 0){
+		respuesta = 0;
+		for(int i = 0; i < size; i++){
+			printf("Indice: %d  --  Valor: %.2f\n",i,pArray[i]);
+		}
+	}
+
+	return respuesta;
+}
 int utn_ordenarArrayIntDesc(int* pArray, int size){
 	int flagSwap;
 	int contador = 0;

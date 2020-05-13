@@ -16,18 +16,22 @@
 #define TAM 9
 
 int main(void) {
-	int respuesta;
-	float resultado;
+	float array[TAM];
 
-
-	while(1){
-		respuesta = utn_getFloat(&resultado, "ingresar flotante: ","error\n", -5, 10, 2);
-		printf("Resultado: %.2f -- Respuesta %d\n",resultado, respuesta);
-	}
+	initArrayFlotante(array, TAM, -10);
+	printArrayFlotante(array, TAM);
 
 	system("pause");
 	return EXIT_SUCCESS;
 }
+
+
+
+
+
+
+
+
 
 
 
