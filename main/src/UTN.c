@@ -163,7 +163,7 @@ static int esLetra(char* cadena){
 
 	if(cadena != NULL && strlen(cadena) > 0){			//valida el paramatreo cadena
 		for(int i = 0 ; cadena[i] != '\0' ; i++){				//si posicion de la cadena no es vacio i++
-			if((cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < 'a' || cadena[i] > 'z') ){	//verifica si el caracter esta fuera de los rangos
+			if((cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < 'a' || cadena[i] > 'z') && cadena[i] != ' ' ){	//verifica si el caracter esta fuera de los rangos
 				retorno = 0;	//0 (FALSO)
 				break;
 			}
@@ -328,6 +328,18 @@ int printArrayFlotante(float* pArray, int size){
 	}
 
 	return respuesta;
+}
+int getStringLetras(char* pString, char* mensaje){
+	char buffer[128];
+	printf(mensaje);
+	myGets(buffer, sizeof(buffer));
+	printf("buffer antes de esLetra: %s\n", buffer);
+	if(esLetra(buffer)){
+		strcpy(pString, buffer);
+
+		return 1;
+	}
+	return 0;
 }
 int utn_ordenarArrayIntDesc(int* pArray, int size){
 	int flagSwap;

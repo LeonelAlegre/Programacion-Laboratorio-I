@@ -16,14 +16,22 @@
 #define TAM 9
 
 int main(void) {
-	float array[TAM];
+	char cadena[256];
+	int i = 0;
+	while(1){
+		system("cls");
+		printf("iteracion: %d ***********\n", i);
 
-	initArrayFlotante(array, TAM, -10);
-	printArrayFlotante(array, TAM);
+		getStringLetras(cadena, "ingresar cadena: ");
 
+		printf("Cadena: %s\n", cadena);
+		i++;
+		system("pause");
+	}
 	system("pause");
 	return EXIT_SUCCESS;
 }
+
 
 
 
